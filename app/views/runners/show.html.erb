@@ -1,0 +1,16 @@
+<p>
+  <strong>Name:</strong>
+  <%= @runner.first_name %> <%= @runner.last_name %>
+</p>
+<p>
+  <strong>Age:</strong>
+  <%= @runner.age %>
+  <strong>Gender:</strong>
+  <%= @runner.gender %>
+</p>
+<p>
+  <strong>Interests</strong>
+  <%= @runner.interests %>
+</p>
+<%= link_to 'Back', runners_path %>
+| <%= link_to 'Edit', edit_runner_path(@runner) %>

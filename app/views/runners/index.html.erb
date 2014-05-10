@@ -1,0 +1,26 @@
+<h1>Listing runners</h1>
+<%= link_to 'New runner?', new_runner_path %>
+<% if @runners.any? %>
+    <table>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th colspan="2"></th>
+      </tr>
+
+      <% @runners.each do |runner| %>
+          <tr>
+            <td><%= runner.first_name%></td>
+            <td><%= runner.last_name %></td>
+            <td><%= runner.age %></td>
+            <td><%= runner.gender %></td>
+            <td><%= link_to 'Show', runner_path(runner) %></td>
+            <td><%= link_to 'Edit', edit_runner_path(runner) %></td>
+          </tr>
+      <% end %>
+    </table>
+<% else %>
+    <i>No registered runners to display</i>
+<% end %>
